@@ -36,6 +36,10 @@ td { color: #800000; }
             <th>Merge Worker</th>
         </tr>
         {% for row in accs %}
+<<<<<<< Updated upstream:containers/serratus-scheduler/flask_app/templates/job_list.html
+=======
+          {% if row.state !== 'merge_done' %}
+>>>>>>> Stashed changes:scheduler/flask_app/templates/job_list.html
           <tr>
             <td>{{ row.acc_id }}</td>
             <td>{{ row.sra_run_info["Run"] }} </td>

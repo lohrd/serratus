@@ -9,9 +9,7 @@ from . import db, jobs, metrics, cron
 
 def create_app(test_config=None):
     """Main entrypoint.  Run this program using:
-
     FLASK_APP=flask-app
-
     flask-3 run
     OR
     gunicorn 'flask-app:create_app()'
@@ -35,6 +33,7 @@ def create_app(test_config=None):
     @app.route('/status')
     def status():
         return jsonify({'status': 'up'})
+<<<<<<< Updated upstream:containers/serratus-scheduler/flask_app/__init__.py
 
     @app.route('/config', methods=["GET", "PUT"])
     def config():
@@ -45,12 +44,17 @@ def create_app(test_config=None):
     @app.route('/')
     def root():
         return redirect(url_for('jobs.show_jobs'))
+=======
+>>>>>>> Stashed changes:scheduler/flask_app/__init__.py
 
     app.register_blueprint(db.bp)
     app.register_blueprint(jobs.bp)
     app.register_blueprint(metrics.bp)
     db.init_app(app)
 
+<<<<<<< Updated upstream:containers/serratus-scheduler/flask_app/__init__.py
     cron.register(app)
 
+=======
+>>>>>>> Stashed changes:scheduler/flask_app/__init__.py
     return app
