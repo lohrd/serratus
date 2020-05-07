@@ -39,10 +39,15 @@ variable "scheduler_port" {
   default = 8000
 }
 
+variable "monitoring_port" {
+  type  = number
+  default = 3000
+}
+
 // PROVIDER/AWS ##############################
 provider "aws" {
   version     = "~> 2.49"
-  region      = var.aws_region
+  region      = "us-east-1"
 }
 
 provider "local" {}

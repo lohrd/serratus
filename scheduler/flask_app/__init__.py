@@ -32,7 +32,11 @@ def create_app(test_config=None):
 
     @app.route('/status')
     def status():
-        return jsonify({'status': 'up'})
+        return app.send_static_file('index.html')
+
+    # @app.route('/')
+    # def root():
+    #     return app.send_static_file('index.html')
 
     app.register_blueprint(db.bp)
     app.register_blueprint(jobs.bp)
