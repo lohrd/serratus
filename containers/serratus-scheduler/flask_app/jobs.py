@@ -130,7 +130,8 @@ def show_jobs():
     blocks = session.query(db.Block, db.Accession)\
         .filter(db.Block.acc_id == db.Accession.acc_id)\
         .all()
-    return render_template('job_list.html', accs=accs, blocks=blocks)
+    return render_template('index.html', accs=accs, blocks=blocks)
+    # return render_template('job_list.html', accs=accs, blocks=blocks)
 
 
 @bp.route('/split/<acc_id>', methods=['POST'])
